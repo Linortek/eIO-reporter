@@ -8,6 +8,8 @@ This bot will send a report and a summary consisting or completed tasks with the
 
 Included here are 2 versions of this bot. One uses email (you'll probably be more likely to use this) the other integrates with a Matrix chat server. I commented the code as best I could, everything should be pretty self-explanatory. When in doubt follow the example.
 
+Both programs have been tested on our internal network on a Debian 12 PC with Python version 3.11.2 with 2 eIO controllers. Email version tested using gmail and outlook, matrix version tested with Matrix (Synapse) and Element (Windows and Android).
+
 # To Configure:
 
 1) make sure you have the required packages
@@ -33,6 +35,7 @@ Edit the following:
 * Line 461: add the time of day you want to send the summary
 
 Upon receiving the report, you can reply with [task] on [machine] completed (for multiple tasks, use a new line). By default the bot checks the email every 5 minutes, you can change this on line 467 (schedule.every(x).minutes)
+After processing the email, it will be deleted to prevent cluttering the inbox
 
 # Matrix version
 Edit the following:
@@ -48,5 +51,3 @@ Line 401: time to send report
 Line 405: time to send summary
 
 Upon receiving the report, you can reply with [task] on [machine] completed
-
-Both programs have been tested on our internal network on a Debian 12 PC with Python version 3.11.2 with 2 eIO controllers. Email version tested using gmail and outlook, matrix version tested with Matrix (Synapse) and Element (Windows and Android).
